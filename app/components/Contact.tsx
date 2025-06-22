@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Calendar, MessageCircle, Mail, ArrowRight, ExternalLink } from 'lucide-react';
+import { Calendar, Mail, ArrowRight, ExternalLink } from 'lucide-react';
 
 const Contact = () => {
   return (
