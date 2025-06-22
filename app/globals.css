@@ -62,26 +62,124 @@ body {
   content: '';
   position: absolute;
   top: 20%;
-  left: -8px;
-  right: -8px;
+  left: -4px;
+  right: -4px;
   bottom: 0;
   background: linear-gradient(90deg, #ffd700, #ffed4a, #fbbf24);
   opacity: 0.3;
   z-index: -1;
-  border-radius: 4px;
-  transform: rotate(-1deg);
+  border-radius: 2px;
+  transform: none;
   animation: markerDraw 2s ease-out forwards;
+}
+
+/* Responsive marker highlight adjustments */
+@media (min-width: 640px) {
+  .marker-highlight::before {
+    left: -6px;
+    right: -6px;
+    border-radius: 3px;
+    transform: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .marker-highlight::before {
+    left: -8px;
+    right: -8px;
+    border-radius: 4px;
+    transform: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .marker-highlight::before {
+    left: -10px;
+    right: -10px;
+    border-radius: 5px;
+    transform: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .marker-highlight::before {
+    left: -12px;
+    right: -12px;
+    border-radius: 6px;
+    transform: none;
+  }
 }
 
 @keyframes markerDraw {
   0% {
     width: 0;
-    left: -8px;
+    left: -4px;
     right: auto;
   }
   100% {
-    width: calc(100% + 16px);
-    left: -8px;
+    width: calc(100% + 8px);
+    left: -4px;
     right: auto;
+  }
+}
+
+/* Responsive marker draw animations */
+@media (min-width: 640px) {
+  @keyframes markerDraw {
+    0% {
+      width: 0;
+      left: -6px;
+      right: auto;
+    }
+    100% {
+      width: calc(100% + 12px);
+      left: -6px;
+      right: auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  @keyframes markerDraw {
+    0% {
+      width: 0;
+      left: -8px;
+      right: auto;
+    }
+    100% {
+      width: calc(100% + 16px);
+      left: -8px;
+      right: auto;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  @keyframes markerDraw {
+    0% {
+      width: 0;
+      left: -10px;
+      right: auto;
+    }
+    100% {
+      width: calc(100% + 20px);
+      left: -10px;
+      right: auto;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  @keyframes markerDraw {
+    0% {
+      width: 0;
+      left: -12px;
+      right: auto;
+    }
+    100% {
+      width: calc(100% + 24px);
+      left: -12px;
+      right: auto;
+    }
   }
 }
