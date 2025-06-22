@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --border: #262626;
+  --primary: #ff6b9d;
+  --muted: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Dotted background pattern */
+.dotted-background {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #ff6b9d, #c44569, #f8b500, #38ada9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Marker highlight effect */
+.marker-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.marker-highlight::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -8px;
+  right: -8px;
+  bottom: 0;
+  background: linear-gradient(90deg, #ffd700, #ffed4a, #fbbf24);
+  opacity: 0.3;
+  z-index: -1;
+  border-radius: 4px;
+  transform: rotate(-1deg);
+  animation: markerDraw 2s ease-out forwards;
+}
+
+@keyframes markerDraw {
+  0% {
+    width: 0;
+    left: -8px;
+    right: auto;
+  }
+  100% {
+    width: calc(100% + 16px);
+    left: -8px;
+    right: auto;
+  }
+}
