@@ -6,6 +6,23 @@ import ProjectCard from './ui/project-card';
 const Projects = () => {
   const projectsData = [
     {
+      title: "Redisfy - Redis Visualizer",
+      type: "DevOps • Database Management",
+      description: "A beautiful, production-ready Redis visualizer and management tool with both web interface and CLI support. Built with React, TypeScript, and Node.js, it provides comprehensive Redis database management capabilities.",
+      achievements: [
+        "Published npm package with 935+ weekly downloads and 16 versions, providing Redis visualization and management tools",
+        "Built dual-interface solution with CLI tool for developers and web interface for visual database management",
+        "Developed comprehensive Redis operations including key browsing, command execution, and server monitoring",
+        "Implemented connection management system supporting multiple Redis instances with authentication and SSL",
+        "Created beautiful CLI interface with colored output and professional design for enhanced developer experience",
+        "Architected responsive web dashboard with real-time metrics, performance charts, and interactive key browser"
+      ],
+      technologies: ["React", "TypeScript", "Node.js", "Redis", "CLI Tools", "Express", "Tailwind CSS", "Recharts", "Commander.js"],
+      githubUrl: "https://github.com/Subham-Satapathy/redisfy",
+      liveUrl: "https://www.npmjs.com/package/redisfy",
+      status: "Completed" as const,
+    },
+    {
       title: "Job Scheduler Microservice",
       type: "Backend • Microservices",
       description: "A high-performance, scalable job scheduler microservice built with Node.js, TypeScript, and BullMQ. Features comprehensive rate limiting, job management, and load testing capabilities for enterprise-grade applications.",
