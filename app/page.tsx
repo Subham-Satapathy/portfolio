@@ -5,8 +5,11 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { AppleHelloEnglishEffect } from './components/ui/apple-hello-effect';
+import { calculateExperienceDuration } from '../lib/utils';
 
 export default function Home() {
+  const experienceDuration = calculateExperienceDuration(new Date('2022-03-01'));
+  
   return (
     <div className="min-h-screen bg-black dotted-background">
       <Navigation />  
@@ -32,7 +35,7 @@ export default function Home() {
           {/* Experience Text */}
           <div className="mb-8">
             <p className="text-gray-400 text-lg font-normal">
-              with more than 3.2 years of experience
+              with {experienceDuration} of experience
             </p>
           </div>
 
