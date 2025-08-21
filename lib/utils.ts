@@ -30,14 +30,14 @@ export function calculateExperienceDuration(startDate: Date): string {
   if (years === 0) {
     return months === 1 ? "1 month" : `${months} months`;
   } else if (years === 1) {
-    return months === 0 ? "1 year" : months === 1 ? "1 year, 1 month" : `1 year, ${months} months`;
+    return months === 0 ? "1 year" : months === 1 ? "1 year and 1 month" : `1 year and ${months} months`;
   } else {
     if (months === 0) {
       return `${years} years`;
     } else if (months === 1) {
-      return `${years} years, 1 month`;
+      return `${years} years and 1 month`;
     } else {
-      return `${years} years, ${months} months`;
+      return `${years} years and ${months} months`;
     }
   }
 } 
