@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Home, User, Briefcase, FileText, Code, MessageSquare } from 'lucide-react';
+import { Home, User, Briefcase, FileText, Code, MessageSquare, FileUser } from 'lucide-react';
 import { NavBar } from './ui/tubelight-navbar';
 
 const Navigation = () => {
@@ -11,6 +11,7 @@ const Navigation = () => {
     { name: 'Skills', url: '#skills', icon: Code },
     { name: 'Experience', url: '#experience', icon: Briefcase },
     { name: 'Projects', url: '#projects', icon: FileText },
+    { name: 'Resume', url: '/resume', icon: FileUser },
     { name: 'Contact', url: '#contact', icon: MessageSquare },
   ];
 
