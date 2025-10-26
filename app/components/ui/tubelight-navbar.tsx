@@ -25,11 +25,11 @@ export function NavBar({ items, className }: NavBarProps) {
       className={cn(
         // Mobile: fixed bottom navbar, Desktop: fixed top navbar
         "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-30",
-        // Mobile: full width with padding, Desktop: compact centered
+        // Mobile: full width with less padding, Desktop: compact centered
         "w-full max-w-sm sm:max-w-none sm:w-auto",
         // Mobile: bottom margin, Desktop: top padding
         "mb-4 sm:mb-0 sm:pt-6",
-        "px-4 sm:px-0",
+        "px-3 sm:px-0",
         "pointer-events-none",
         className,
       )}
@@ -37,9 +37,11 @@ export function NavBar({ items, className }: NavBarProps) {
       <div className={cn(
         "flex items-center justify-center gap-1 sm:gap-3",
         "bg-background/80 sm:bg-background/5 border border-border backdrop-blur-lg",
-        // Mobile: larger padding for better touch targets, Desktop: compact
-        "py-2 sm:py-1 px-2 sm:px-1",
-        "rounded-2xl sm:rounded-full shadow-lg pointer-events-auto"
+        // Mobile: balanced padding, Desktop: compact
+        "py-3 sm:py-1 px-2 sm:px-1",
+        "rounded-2xl sm:rounded-full shadow-lg pointer-events-auto",
+        // Mobile: allow horizontal scroll if needed
+        "overflow-x-auto scrollbar-hide"
       )}>
         {items.map((item) => {
           const Icon = item.icon
@@ -52,19 +54,18 @@ export function NavBar({ items, className }: NavBarProps) {
               onClick={() => setActiveTab(item.name)}
               className={cn(
                 "relative cursor-pointer text-xs sm:text-sm font-semibold",
-                // Mobile: larger touch targets, Desktop: compact
-                "px-3 py-3 sm:px-6 sm:py-2",
+                // Mobile: icon-only with balanced touch targets, Desktop: compact
+                "px-2 py-2 sm:px-6 sm:py-2",
                 "rounded-xl sm:rounded-full transition-colors",
                 "text-foreground/80 hover:text-primary",
-                "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-0",
-                // Mobile: min width for consistent sizing
-                "min-w-0 flex-1 sm:flex-none",
+                "flex items-center justify-center",
+                // Mobile: square touch targets, Desktop: flex-none
+                "w-10 h-10 sm:w-auto sm:h-auto sm:flex-none flex-shrink-0",
                 isActive && "bg-muted text-primary",
               )}
             >
-              {/* Mobile: Icon + Text, Desktop: Text only for larger screens, Icon only for md */}
-              <Icon size={16} strokeWidth={2.5} className="sm:hidden md:inline lg:hidden" />
-              <span className="text-[10px] sm:hidden leading-tight">{item.name}</span>
+              {/* Mobile: Icon only, Desktop: Text only for larger screens, Icon only for md */}
+              <Icon size={18} strokeWidth={2.5} className="sm:hidden md:inline lg:hidden" />
               <span className="hidden sm:inline md:hidden lg:inline">{item.name}</span>
               
               {isActive && (
