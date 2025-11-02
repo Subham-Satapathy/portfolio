@@ -25,7 +25,7 @@ const Footer = () => {
     },
     {
       name: 'Instagram',
-      url: 'https://instagram.com/s.subham',
+      url: 'https://instagram.com/s.subham_',
       icon: Instagram,
       hoverColor: 'hover:text-pink-400'
     }
